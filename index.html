@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fictionverse: Where every story becomes a universe</title>
+<meta name="description" content="Discover worlds. Create legends. Build universes. Original fiction: Eternal Origin and The Devourer's Return.">
+<meta name="theme-color" content="#090A12">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='%239367FF'/%3E%3Ccircle cx='50' cy='50' r='18' fill='%2336B9FF'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&family=Syne:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+:root{--void:#090A12;--space:#171827;--violet:#9367FF;--blue:#36B9FF;--text:#ECEBF5;--muted:#A9AAC2;--line:#25273d;--line2:rgba(147,103,255,.45);
+--head:"Syne",system-ui,sans-serif;--disp:"Cinzel",Georgia,serif;--body:"Inter",system-ui,sans-serif;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--void);color:var(--text);font:400 15px/1.5 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 1.25rem}
+i.ti{line-height:1}
+
+header{position:sticky;top:0;z-index:8;background:rgba(9,10,18,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2);padding-top:env(safe-area-inset-top)}
+.hd{display:flex;align-items:center;gap:1.4rem;height:64px}
+.logo{display:flex;align-items:center;gap:.6rem;font:800 1.1rem var(--head);letter-spacing:.05em;text-decoration:none;white-space:nowrap}
+.mark{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--violet);display:grid;place-items:center;color:var(--blue);font-size:1.1rem;box-shadow:0 0 14px rgba(147,103,255,.5)}
+nav.main{display:flex;gap:1.3rem;font-size:.88rem;flex:1}
+nav.main a{text-decoration:none;display:flex;align-items:center;gap:.15rem}
+nav.main a:hover{color:var(--blue)}
+.search{display:flex;align-items:center;gap:.5rem;border:1px solid var(--line2);border-radius:99px;padding:.45rem .9rem;width:240px;color:var(--muted)}
+.search input{background:none;border:0;color:var(--text);width:100%;font:inherit;outline:none}
+.ib{width:38px;height:38px;border-radius:50%;border:1px solid var(--line2);background:none;color:var(--text);display:grid;place-items:center;cursor:pointer;font-size:1.15rem}
+.login{padding:.5rem 1.3rem;border-radius:8px;background:rgba(147,103,255,.28);border:1px solid var(--violet);color:#fff;cursor:pointer;font:600 .88rem var(--body)}
+.login:hover{background:rgba(147,103,255,.5)}
+.burger{display:none}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.65rem 1.4rem;border-radius:99px;border:1px solid var(--violet);background:rgba(9,10,18,.4);color:#fff;font:500 .92rem var(--body);text-decoration:none;cursor:pointer}
+.btn:hover{background:rgba(147,103,255,.3)}
+.btn.sm{padding:.4rem 1rem;font-size:.82rem}
+
+.hero{position:relative;min-height:400px;display:flex;align-items:center;overflow:hidden;isolation:isolate;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:
+radial-gradient(circle at 82% 30%,rgba(147,103,255,.5),transparent 42%),radial-gradient(circle at 98% 85%,rgba(54,185,255,.28),transparent 35%),
+radial-gradient(1.5px 1.5px at 10% 20%,#fff,transparent),radial-gradient(1px 1px at 28% 72%,#cfd0ff,transparent),radial-gradient(1.5px 1.5px at 44% 16%,#fff,transparent),radial-gradient(1px 1px at 60% 80%,#cfd0ff,transparent),radial-gradient(1px 1px at 70% 40%,#fff,transparent),radial-gradient(1.5px 1.5px at 6% 86%,#fff,transparent),radial-gradient(1px 1px at 90% 12%,#fff,transparent)}
+.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero h1{font:800 clamp(2.2rem,8.5vw,4.6rem)/1 var(--head);letter-spacing:.07em}
+.hero h1 span{color:var(--violet)}
+.hero .sub{font:500 clamp(1.05rem,3.6vw,2rem)/1.2 var(--disp);margin:.7rem 0 .8rem}
+.hero p{color:#d6d6ea;margin-bottom:1.5rem}
+.cats{display:grid;grid-template-columns:repeat(7,1fr);gap:.7rem;margin-top:1.1rem}
+.cat{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;padding:.9rem .4rem;border:1px solid var(--line2);border-radius:8px;background:rgba(23,24,39,.85);text-decoration:none;font-size:.82rem;font-weight:500;text-align:center;min-height:78px}
+.cat i{font-size:1.6rem}
+.cat:hover{border-color:var(--blue);background:rgba(54,185,255,.1)}
+
+.sh{display:flex;align-items:center;justify-content:space-between;margin:2rem 0 .9rem}
+.sh h2{display:flex;align-items:center;gap:.6rem;font:600 1.2rem var(--head)}
+.sh h2 i{color:var(--violet);font-size:1.4rem}
+.sh a{color:var(--blue);font-size:.88rem;text-decoration:none}
+.og{display:grid;grid-template-columns:1fr 1fr .75fr;gap:1rem}
+.card{position:relative;min-height:240px;border:1px solid var(--line2);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:1.3rem;isolation:isolate}
+.card::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--ga)}
+.card .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.tags{position:absolute;top:.9rem;right:.9rem;display:flex;gap:.4rem;flex-wrap:wrap;justify-content:flex-end}
+.tags span{font-size:.72rem;font-weight:500;padding:.2rem .65rem;border-radius:99px;background:#6a3fe0;border:1px solid var(--violet)}
+.tags span+span{background:#123a66;border-color:var(--blue)}
+.card.dr .tags span{background:#8d1224;border-color:#e0445c}
+.card.dr .tags span+span{background:#1c1f3a;border-color:#4a4f80}
+.card h3{font:500 italic 1.9rem/1.1 var(--disp);margin-bottom:.4rem}
+.card p{font-size:.9rem;color:#d6d6ea;margin-bottom:.9rem;max-width:34ch}
+.card .btn{align-self:flex-start}
+.panel{border:1px solid var(--line2);border-radius:10px;padding:1.1rem 1.2rem;background:rgba(23,24,39,.7)}
+.panel h3{display:flex;align-items:center;gap:.5rem;font:600 1.1rem var(--head);padding-bottom:.6rem;border-bottom:1px solid var(--line);margin-bottom:.4rem}
+.panel h3 i{color:var(--violet)}
+.tr{list-style:none}
+.tr li{display:grid;grid-template-columns:20px 52px 1fr;gap:.7rem;align-items:center;padding:.55rem 0}
+.tr .n{font:600 1.05rem var(--head);color:var(--muted)}
+.tr .th{width:52px;height:52px;border-radius:6px;overflow:hidden;background:var(--ga);position:relative}
+.tr .th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tr b{font-weight:500;font-size:.88rem;display:block;line-height:1.3}
+
+.gg{display:grid;grid-template-columns:repeat(8,1fr);gap:.7rem}
+.g{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.35rem;min-height:76px;border:1px solid var(--line2);border-radius:8px;text-decoration:none;font-size:.85rem;font-weight:500;background:var(--ga)}
+.g i{font-size:1.5rem}
+.g:hover{border-color:var(--blue)}
+
+.join{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:1.6rem;padding:1.6rem 2rem;border:1px solid var(--line2);border-radius:10px;background:linear-gradient(90deg,#161036,#2a1670 60%,#0f2a5a)}
+.join h2{font:600 1.7rem var(--head)}
+.join p{color:#d6d6ea}
+
+footer{margin-top:2.5rem;border-top:1px solid var(--line2);padding:1.4rem 0}
+.ft{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.ft small{display:block;color:var(--muted);font-size:.78rem;margin-top:.2rem}
+.fl{display:flex;gap:1.3rem;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}
+.fl a{text-decoration:none}.fl a:hover{color:var(--text)}
+.so{display:flex;gap:.6rem}
+.so a{width:38px;height:38px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;font-size:1.15rem;text-decoration:none}
+.so a:hover{border-color:var(--blue);color:var(--blue)}
+.bn{display:none}
+
+dialog{background:var(--space);color:var(--text);border:1px solid var(--line2);border-radius:14px;padding:1.5rem;width:min(92vw,400px);margin:auto}
+dialog::backdrop{background:rgba(0,0,0,.72)}
+.dh{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.dh h2{font:600 1.4rem var(--head)}
+.x{background:none;border:0;color:var(--muted);font-size:1.8rem;cursor:pointer;line-height:1}
+.tabs{display:flex;gap:.5rem;margin-bottom:1rem}
+.tabs button{flex:1;font:600 .85rem var(--body);padding:.55rem;border-radius:8px;border:1px solid var(--line);background:none;color:var(--muted);cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--violet);border-color:var(--violet);color:#0b0620}
+.af{display:grid;gap:.8rem}
+.af input{padding:.8rem 1rem;border-radius:6px;border:1px solid var(--line);background:var(--void);color:var(--text);font:1rem var(--body)}
+.af .go{justify-content:center;background:var(--violet);color:#0b0620;font-weight:600;border-radius:8px}
+#am{color:#ff8fa3;font-size:.9rem;min-height:1.3em}
+.demo{margin-top:.6rem;font-size:.8rem;color:var(--muted)}
+
+.pub{display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem;padding:1.8rem;border:1px solid var(--line2);border-radius:10px;background:linear-gradient(135deg,#171827,#1d1a3a)}
+.pub h3{font:600 1.5rem var(--head);margin-bottom:.5rem}
+.pub p{color:var(--muted);margin-bottom:1.1rem;max-width:48ch}
+.pub ul{list-style:none;display:grid;gap:.6rem;align-content:center}
+.pub li{display:flex;gap:.7rem;align-items:center;padding:.7rem 1rem;border:1px solid var(--line);border-radius:8px;background:rgba(9,10,18,.5)}
+.pub li i{color:var(--blue);font-size:1.3rem}
+.fd{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.fd div{position:relative;padding:1.1rem 1.2rem;border:1px solid var(--line);border-radius:10px;background:rgba(23,24,39,.7)}
+.fd div.now{border-color:var(--blue);box-shadow:0 0 18px rgba(54,185,255,.2)}
+.fd small{display:block;color:var(--blue);font-size:.75rem;font-weight:600;margin-bottom:.3rem}
+.fd h4{font:600 1.05rem var(--head);margin-bottom:.3rem}
+.fd p{color:var(--muted);font-size:.88rem}
+@media(max-width:1000px){
+ .pub{grid-template-columns:1fr}.fd{grid-template-columns:1fr 1fr}
+ .og{grid-template-columns:1fr 1fr}.panel{grid-column:1/-1}
+ .gg{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:900px){
+ .hd{justify-content:space-between;gap:.6rem}.burger{display:grid}.search{display:none}.logo{margin:0 auto}.login{display:none}
+ nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:var(--void);flex-direction:column;gap:.9rem;padding:1.1rem 1.25rem;border-bottom:1px solid var(--line2)}
+ nav.main.open{display:flex}
+}
+@media(max-width:700px){
+ body{padding-bottom:calc(66px + env(safe-area-inset-bottom))}
+ .hero{min-height:340px;text-align:center}.hero .wrap{display:flex;flex-direction:column;align-items:center}
+ .cats{display:flex;overflow-x:auto;scrollbar-width:none}.cat{flex:0 0 76px}
+ .og{grid-template-columns:1fr}
+ .join{padding:1.3rem}.ft{flex-direction:column;align-items:flex-start}
+ .bn{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:8;justify-content:space-around;background:rgba(9,10,18,.97);border-top:1px solid var(--line2);padding:.45rem 0 calc(.45rem + env(safe-area-inset-bottom))}
+ .bn a{display:flex;flex-direction:column;align-items:center;gap:.1rem;font-size:.68rem;color:var(--muted);text-decoration:none}
+ .bn a i{font-size:1.35rem}.bn a.on{color:var(--violet)}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hd">
+    <button class="ib burger" id="burger" aria-label="Menu"><i class="ti ti-menu-2"></i></button>
+    <a class="logo" href="#top"><span class="mark"><i class="ti ti-bolt"></i></span>FICTIONVERSE</a>
+    <nav class="main" aria-label="Main">
+      <a href="#explore">Explore <i class="ti ti-chevron-down"></i></a>
+      <a href="#originals">Fictionverse Originals <i class="ti ti-chevron-down"></i></a>
+      <a href="#publish">Creators <i class="ti ti-chevron-down"></i></a>
+      <a href="#genres">Community <i class="ti ti-chevron-down"></i></a>
+      <a href="#footer">More <i class="ti ti-chevron-down"></i></a>
+    </nav>
+    <label class="search"><i class="ti ti-search"></i><input type="search" placeholder="Search stories, characters..." aria-label="Search"></label>
+    <button class="ib" id="userbtn" aria-label="Account"><i class="ti ti-user"></i></button>
+    <button class="login" id="login">Login</button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <img class="bg" src="images/hero.jpg" alt="" onerror="this.remove()">
+  <div class="wrap">
+    <h1>FICTION<span>VERSE</span></h1>
+    <div class="sub">Where Every Story Becomes A Universe</div>
+    <p>Discover Worlds. Create Legends. Build Universes.</p>
+    <a class="btn" href="#originals">Explore Now <i class="ti ti-arrow-right"></i></a>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cats" id="explore">
+    <a class="cat" href="#"><i class="ti ti-player-play" style="color:var(--blue)"></i>Anime</a>
+    <a class="cat" href="#"><i class="ti ti-book-2" style="color:var(--violet)"></i>Manga</a>
+    <a class="cat" href="#"><i class="ti ti-books" style="color:var(--blue)"></i>Light Novels</a>
+    <a class="cat" href="#"><i class="ti ti-device-mobile" style="color:var(--blue)"></i>Manhwa / Webtoons</a>
+    <a class="cat" href="#"><i class="ti ti-feather" style="color:var(--violet)"></i>Novels / Web Novels</a>
+    <a class="cat" href="#"><i class="ti ti-cloud" style="color:var(--blue)"></i>Donghua</a>
+    <a class="cat" href="#"><i class="ti ti-dots" style="color:var(--violet)"></i>More</a>
+  </div>
+
+  <div class="sh" id="originals"><h2><i class="ti ti-sparkles"></i>Fictionverse Originals</h2><a href="#">View all</a></div>
+  <div class="og">
+    <article class="card" style="--ga:radial-gradient(circle at 70% 25%,rgba(54,185,255,.55),transparent 50%),linear-gradient(160deg,#10294a,#0b0d1c 75%)">
+      <img class="bg" src="images/eternal-origin-banner.jpg" alt="" onerror="this.remove()">
+      <div class="tags"><span>Original Universe</span><span>Fantasy / Action</span></div>
+      <h3>Eternal Origin</h3>
+      <p>A journey through an endless world of origin powers and divine destinies.</p>
+      <a class="btn sm" href="#">View Series <i class="ti ti-arrow-right"></i></a>
+    </article>
+    <article class="card dr" style="--ga:radial-gradient(circle at 25% 25%,rgba(200,40,70,.6),transparent 50%),linear-gradient(160deg,#3a0f1f,#0b0d1c 75%)">
+      <img class="bg" src="images/devourer-return-banner.jpg" alt="" onerror="this.remove()">
+      <div class="tags"><span>Original Manhwa</span><span>Dark Fantasy</span></div>
+      <h3>The Devourer's Return</h3>
+      <p>When the hunger awakens, the world shall tremble.</p>
+      <a class="btn sm" href="#">View Series <i class="ti ti-arrow-right"></i></a>
+    </article>
+    <aside class="panel">
+      <h3><i class="ti ti-flame"></i>Trending</h3>
+      <ol class="tr">
+        <li><span class="n">1</span><span class="th" style="--ga:linear-gradient(160deg,#10294a,#0b0d1c)"><img src="images/eternal-origin.jpg" alt="" onerror="this.remove()"></span><b>Eternal Origin (Original)</b></li>
+        <li><span class="n">2</span><span class="th" style="--ga:linear-gradient(160deg,#4a1226,#0b0d1c)"><img src="images/devourer-return.jpg" alt="" onerror="this.remove()"></span><b>The Devourer's Return (Original)</b></li>
+        <li><span class="n">3</span><span class="th" style="--ga:linear-gradient(160deg,#2a1670,#0b0d1c)"></span><b>More to Explore...</b></li>
+      </ol>
+    </aside>
+  </div>
+
+  <div class="sh" id="genres"><h2><i class="ti ti-sparkles"></i>Discover by Genre</h2><a href="#">View all <i class="ti ti-arrow-right"></i></a></div>
+  <div class="gg">
+    <a class="g" href="#" style="--ga:linear-gradient(135deg,#4a2a10,#12101e)"><i class="ti ti-wand" style="color:#ffb44d"></i>Fantasy</a>
+    <a class="g" href="#" style="--ga:linear-gradient(135deg,#0f2f55,#12101e)"><i class="ti ti-swords"></i>Action</a>
+    <a class="g" href="#" style="--ga:linear-gradient(135deg,#2c2a40,#12101e)"><i class="ti ti-eye"></i>Mystery</a>
+    <a class="g" href="#" style="--ga:linear-gradient(135deg,#0d3a5f,#12101e)"><i class="ti ti-rocket"></i>Sci-Fi</a>
+    <a class="g" href="#" style="--ga:linear-gradient(135deg,#1f3a2a,#12101e)"><i class="ti ti-compass"></i>Adventure</a>
+    <a class="g" href="#" style="--ga:linear-gradient(135deg,#4a1a3a,#12101e)"><i class="ti ti-masks-theater"></i>Drama</a>
+    <a class="g" href="#" style="--ga:linear-gradient(135deg,#1c2a6a,#12101e)"><i class="ti ti-planet"></i>Isekai</a>
+    <a class="g" href="#" style="--ga:linear-gradient(135deg,#231a48,#12101e)"><i class="ti ti-dots" style="color:var(--violet)"></i>More</a>
+  </div>
+
+  <div class="sh" id="publish"><h2><i class="ti ti-feather"></i>Publish Your Story</h2></div>
+  <section class="pub">
+    <div>
+      <h3>Your story deserves a universe</h3>
+      <p>Fictionverse Creators will open to independent writers and artists. Publish novels, manga and webtoons, and keep the rights to your work unless you sign a separate agreement.</p>
+      <button class="btn" id="pubbtn">Apply as a Creator <i class="ti ti-arrow-right"></i></button>
+    </div>
+    <ul>
+      <li><i class="ti ti-feather"></i>Original novels and web novels</li>
+      <li><i class="ti ti-book-2"></i>Manga and comics</li>
+      <li><i class="ti ti-device-mobile"></i>Manhwa and webtoons</li>
+    </ul>
+  </section>
+
+  <div class="sh" id="foundation"><h2><i class="ti ti-sparkles"></i>Fictionverse Foundation</h2></div>
+  <section class="fd">
+    <div class="now"><small>Now</small><h4>Foundation</h4><p>Brand, homepage and canon for both original universes.</p></div>
+    <div><small>Next</small><h4>First launch</h4><p>Series pages, reader accounts and the first web novel chapters.</p></div>
+    <div><small>Later</small><h4>Creator ecosystem</h4><p>Publishing tools, community features and manga or webtoon pilots.</p></div>
+    <div><small>Future</small><h4>Adaptations</h4><p>Paid originals, memberships, motion comics and animation partnerships.</p></div>
+  </section>
+
+  <section class="join" id="join">
+    <div><h2>Join the Fictionverse</h2><p>Be a part of our ever-expanding multiverse.</p></div>
+    <button class="btn" id="joinbtn">Create Account <i class="ti ti-arrow-right"></i></button>
+  </section>
+</div>
+</main>
+
+<footer id="footer">
+  <div class="wrap ft">
+    <div><a class="logo" href="#top"><span class="mark"><i class="ti ti-bolt"></i></span>FICTIONVERSE</a><small>Where Every Story Becomes A Universe</small></div>
+    <div class="fl"><a href="#">About</a><a href="#">Contact</a><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><a href="#">Creator Guidelines</a></div>
+    <div class="so"><a href="#" aria-label="Discord"><i class="ti ti-brand-discord"></i></a><a href="#" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a><a href="#" aria-label="X"><i class="ti ti-brand-x"></i></a><a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a></div>
+  </div>
+</footer>
+
+<nav class="bn" aria-label="App">
+  <a class="on" href="#top"><i class="ti ti-home"></i>Home</a>
+  <a href="#explore"><i class="ti ti-compass"></i>Explore</a>
+  <a href="#originals"><i class="ti ti-books"></i>Library</a>
+  <a href="#genres"><i class="ti ti-messages"></i>Community</a>
+  <a href="#footer"><i class="ti ti-dots"></i>More</a>
+</nav>
+
+<dialog id="dlg" aria-labelledby="dt">
+  <div class="dh"><h2 id="dt">Sign in</h2><button class="x" id="dx" aria-label="Close">&times;</button></div>
+  <div class="tabs"><button type="button
