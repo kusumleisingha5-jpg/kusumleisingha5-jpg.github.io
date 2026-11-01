@@ -29,8 +29,7 @@ header{position:sticky;top:0;z-index:8;background:rgba(9,10,18,.94);backdrop-fil
 nav.main{display:flex;gap:1.3rem;font-size:.88rem;flex:1}
 nav.main a{text-decoration:none;display:flex;align-items:center;gap:.15rem}
 nav.main a:hover{color:var(--blue)}
-.search{display:flex;align-items:center;gap:.5rem;border:1px solid var(--line2);border-radius:99px;padding:.45rem .9rem;width:240px;color:var(--muted)}
-.search input{background:none;border:0;color:var(--text);width:100%;font:inherit;outline:none}
+.search{display:flex;align-items:center;gap:.5rem;border:1px solid var(--line2);border-radius:99px;padding:.45rem .9rem;width:240px;color:var(--muted)}.search input{background:none;border:0;color:var(--text);width:100%;font:inherit;outline:none}
 .ib{width:38px;height:38px;border-radius:50%;border:1px solid var(--line2);background:none;color:var(--text);display:grid;place-items:center;cursor:pointer;font-size:1.15rem}
 .login{padding:.5rem 1.3rem;border-radius:8px;background:rgba(147,103,255,.28);border:1px solid var(--violet);color:#fff;cursor:pointer;font:600 .88rem var(--body)}
 .login:hover{background:rgba(147,103,255,.5)}
@@ -209,8 +208,7 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
       <ol class="tr">
         <li><span class="n">1</span><span class="th" style="--ga:linear-gradient(160deg,#10294a,#0b0d1c)"><img src="images/eternal-origin.jpg" alt="" onerror="this.remove()"></span><b>Eternal Origin (Original)</b></li>
         <li><span class="n">2</span><span class="th" style="--ga:linear-gradient(160deg,#4a1226,#0b0d1c)"><img src="images/devourer-return.jpg" alt="" onerror="this.remove()"></span><b>The Devourer's Return (Original)</b></li>
-        <li><span class="n">3</span><span class="th" style="--ga:linear-gradient(160deg,#2a1670,#0b0d1c)"></span><b>More to Explore...</b></li>
-      </ol>
+        <li><span class="n">3</span><span class="th" style="--ga:linear-gradient(160deg,#2a1670,#0b0d1c)"></span><b>More to Explore...</b></li></ol>
     </aside>
   </div>
 
@@ -272,4 +270,45 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
 </nav>
 
 <dialog id="dlg" aria-labelledby="dt">
-  <div class="dh"><h2 id="dt">Sign in</h2><button class="x" id="dx" aria-label="Close">&ti
+  <div class="dh"><h2 id="dt">Sign in</h2><button class="x" id="dx" aria-label="Close">&times;</button></div>
+  <div class="tabs"><button type="button" data-m="in" aria-pressed="true">Sign in</button><button type="button" data-m="up" aria-pressed="false">Create account</button></div>
+  <form class="af" id="af">
+    <input type="email" id="em" placeholder="Email" autocomplete="email" aria-label="Email" required>
+    <input type="password" id="pw" placeholder="Password (6+ characters)" autocomplete="current-password" aria-label="Password" minlength="6" required>
+    <button class="btn go" id="go" type="submit">Sign in</button>
+    <p id="am" role="alert"></p>
+  </form>
+  <p class="demo" id="demo"></p>
+</dialog>
+
+<script>
+function $(i){return document.getElementById(i)}
+function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v)}catch(e){return null}}
+$('burger').onclick=function(){document.querySelector('nav.main').classList.toggle('open')};
+document.querySelectorAll('nav.main a').forEach(function(a){a.onclick=function(){document.querySelector('nav.main').classList.remove('open')}});
+
+/* Sign-in. Paste your Firebase config below to make accounts real. */
+var FIREBASE_CONFIG={apiKey:"YOUR_API_KEY",authDomain:"YOUR-PROJECT.firebaseapp.com",projectId:"YOUR-PROJECT",appId:"YOUR_APP_ID"};
+var live=FIREBASE_CONFIG.apiKey.indexOf('YOUR')!==0,user=null,mode='in';
+function setUser(u){user=u;$('login').textContent=u?'Sign out':'Login';$('userbtn').title=u?u.email:''}
+function setMode(m){mode=m;document.querySelectorAll('.tabs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.m===m)});var t=m==='in'?'Sign in':'Create account';$('dt').textContent=t;$('go').textContent=t;$('pw').autocomplete=m==='in'?'current-password':'new-password';$('am').textContent=''}
+function openDlg(m){setMode(m);$('dlg').showModal()}
+function load(s,cb){var e=document.createElement('script');e.src=s;e.onload=cb;document.head.appendChild(e)}
+if(live){var base='https://www.gstatic.com/firebasejs/10.12.2/';
+  load(base+'firebase-app-compat.js',function(){load(base+'firebase-auth-compat.js',function(){firebase.initializeApp(FIREBASE_CONFIG);firebase.auth().onAuthStateChanged(setUser)})});
+}else{$('demo').textContent='Demo mode: your sign-in is stored on this device only until Firebase is connected.';var d=ls('fv-demo-user');if(d)setUser({email:d})}
+function authClick(){if(user){if(live)firebase.auth().signOut();else{ls('fv-demo-user',null);setUser(null)}}else openDlg('in')}
+$('login').onclick=authClick;$('userbtn').onclick=authClick;
+$('pubbtn').onclick=function(){if(!user)openDlg('up')};
+$('joinbtn').onclick=function(){if(!user)openDlg('up')};
+$('dx').onclick=function(){$('dlg').close()};
+document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){setMode(b.dataset.m)}});
+$('af').addEventListener('submit',function(e){
+  e.preventDefault();var em=$('em').value.trim(),pw=$('pw').value;$('am').textContent='';
+  if(!live){ls('fv-demo-user',em);setUser({email:em});$('dlg').close();return}
+  var a=firebase.auth(),p=mode==='in'?a.signInWithEmailAndPassword(em,pw):a.createUserWithEmailAndPassword(em,pw);
+  p.then(function(){$('dlg').close();$('af').reset()}).catch(function(x){$('am').textContent=x.message.replace('Firebase: ','')});
+});
+</script>
+</body>
+</html>
