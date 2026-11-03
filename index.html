@@ -101,8 +101,7 @@ radial-gradient(1.5px 1.5px at 10% 20%,#fff,transparent),radial-gradient(1px 1px
 .join{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:1.6rem;padding:1.6rem 2rem;border:1px solid var(--line2);border-radius:10px;background:linear-gradient(90deg,#161036,#2a1670 60%,#0f2a5a)}
 .join h2{font:600 1.7rem var(--head)}
 .join p{color:#d6d6ea}
-
-footer{margin-top:2.5rem;border-top:1px solid var(--line2);padding:1.4rem 0}
+ footer{margin-top:2.5rem;border-top:1px solid var(--line2);padding:1.4rem 0}
 .ft{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
 .ft small{display:block;color:var(--muted);font-size:.78rem;margin-top:.2rem}
 .fl{display:flex;gap:1.3rem;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}
@@ -254,8 +253,7 @@ header{box-shadow:0 1px 0 rgba(147,103,255,.25),0 10px 30px rgba(0,0,0,.35)}
 .ftabs button[aria-pressed="true"],.catbar button[aria-pressed="true"]{background:var(--violet);border-color:var(--violet);color:#0b0620}
 .catbar{display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;margin-bottom:1rem;padding-bottom:.2rem}
 .catbar button{white-space:nowrap}
-.empty{color:var(--muted);margin:.5rem 0 1rem}
-.card[hidden]{display:none}
+.empty{color:var(--muted);margin:.5rem 0 1rem}.card[hidden]{display:none}
 .page .meta{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin:1rem 0}
 .page .meta div{border:1px solid var(--line);border-radius:10px;padding:.5rem .8rem;background:rgba(23,24,39,.6)}
 .page .meta dt{font-size:.7rem;color:var(--muted)}.page .meta dd{font-weight:500;font-size:.92rem}
@@ -278,6 +276,33 @@ header{box-shadow:0 1px 0 rgba(147,103,255,.25),0 10px 30px rgba(0,0,0,.35)}
 .lmark{width:40px;height:40px;flex:none;filter:drop-shadow(0 0 10px rgba(147,103,255,.55))}
 .logo b{font-weight:800;background:linear-gradient(90deg,#9367FF,#36B9FF);-webkit-background-clip:text;background-clip:text;color:transparent}
 .logo{gap:.55rem}
+/* Colour refinement */
+:root{--lav:#C4A5FF}
+body{background:radial-gradient(900px 520px at 88% -8%,rgba(147,103,255,.1),transparent 62%),radial-gradient(800px 480px at -12% 38%,rgba(54,185,255,.07),transparent 62%),radial-gradient(900px 500px at 100% 78%,rgba(147,103,255,.07),transparent 62%),var(--void);background-repeat:no-repeat}
+.hero::before{background:radial-gradient(circle at 82% 30%,rgba(147,103,255,.34),transparent 42%),radial-gradient(circle at 98% 85%,rgba(54,185,255,.22),transparent 35%),
+radial-gradient(1.5px 1.5px at 10% 20%,#fff,transparent),radial-gradient(1px 1px at 28% 72%,#cfd0ff,transparent),radial-gradient(1.5px 1.5px at 44% 16%,#fff,transparent),radial-gradient(1px 1px at 60% 80%,#cfd0ff,transparent),radial-gradient(1px 1px at 70% 40%,#fff,transparent),radial-gradient(1.5px 1.5px at 6% 86%,#fff,transparent),radial-gradient(1px 1px at 90% 12%,#fff,transparent)}
+.hero .art{opacity:.5}
+.hero .btn{box-shadow:0 8px 24px rgba(147,103,255,.26)}
+.sh h2 i{color:var(--lav)}
+.page#eternal-origin{background:linear-gradient(180deg,rgba(54,185,255,.07),transparent 45%)}
+.page#devourer-return{background:linear-gradient(180deg,rgba(147,103,255,.08),transparent 45%)}
+.page#terms,.page#privacy{background:linear-gradient(180deg,rgba(255,255,255,.02),transparent 40%)}
+.page{padding-left:1.2rem;padding-right:1.2rem;border-radius:14px}
+.cats,.gg{padding:1rem;border:1px solid var(--line);border-radius:14px;background:linear-gradient(160deg,rgba(54,185,255,.05),rgba(147,103,255,.05))}
+.cats{gap:.7rem}
+/* Desktop and card consistency */
+:root{--deep:#17152A;--star:#F0EEFF}
+.sh h2,.card h3,.feat h3{color:var(--star)}
+.page .pw{margin:0}
+.search{width:min(300px,26vw)}
+.pub{background:linear-gradient(135deg,var(--deep),#122242)}
+@media(hover:hover){.card.dr:hover{border-color:#e0445c;box-shadow:0 18px 44px rgba(224,68,92,.26)}}
+.flink{background:none;border:0;color:var(--blue);cursor:pointer;font:inherit;font-size:.85rem;justify-self:start;padding:.3rem 0}
+.flink[hidden]{display:none}
+/* Readable headings: Syne stays for the logo and hero, Inter for sentence-case headings */
+.page h2.t,.page h3.sub,.page .char h4,.sh h2,.panel h3,.join h2,.pub h3,.fd h4{font-family:var(--body);letter-spacing:-.01em}
+.page h2.t{font-weight:800}
+.page h3.sub,.sh h2,.panel h3,.join h2,.pub h3,.fd h4,.page .char h4{font-weight:700}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1!important;transform:none!important}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Fictionverse","url":"https://kusumleisingha5-jpg.github.io/","description":"Original manga and manhwa universes: Eternal Origin and The Devourer's Return."}</script>
@@ -296,7 +321,7 @@ header{box-shadow:0 1px 0 rgba(147,103,255,.25),0 10px 30px rgba(0,0,0,.35)}
       <a href="#foundation">Roadmap</a>
       <a href="#notify">Updates</a>
     </nav>
-    <label class="search"><i class="ti ti-search"></i><input type="search" placeholder="Search stories, characters..." aria-label="Search"></label>
+    <label class="search"><i class="ti ti-search"></i><input type="search" placeholder="Search stories..." aria-label="Search"></label>
     <button class="ib" id="sbtn" aria-label="Search"><i class="ti ti-search"></i></button>
     <button class="ib" id="userbtn" aria-label="Account"><i class="ti ti-user"></i></button>
     <button class="login" id="login">Login</button>
@@ -432,7 +457,6 @@ header{box-shadow:0 1px 0 rgba(147,103,255,.25),0 10px 30px rgba(0,0,0,.35)}
       <li><i class="ti ti-device-mobile"></i>Manhwa and webtoons</li>
     </ul>
   </section>
-
   <div class="sh" id="foundation"><h2><i class="ti ti-sparkles"></i>Fictionverse Foundation</h2></div>
   <section class="fd">
     <div class="now"><small>Now</small><h4>Foundation</h4><p>Brand, homepage and canon for both original universes.</p></div>
@@ -459,7 +483,7 @@ header{box-shadow:0 1px 0 rgba(147,103,255,.25),0 10px 30px rgba(0,0,0,.35)}
 <h3 class="sub">Our content</h3><p>Eternal Origin, The Devourer's Return, their characters, worlds, text and artwork are original works. All rights are reserved by their creator. You may not copy, republish, translate, adapt or sell them without written permission.</p>
 <h3 class="sub">Other people's titles</h3><p>When the site mentions anime, manga, novels or other titles made by others, those belong to their owners. Fictionverse links to official places to read or watch them and does not host them without permission.</p>
 <h3 class="sub">Creators and submissions</h3><p>Creator publishing is not open yet. When it opens, creators will keep the rights to their own work unless a separate written agreement says otherwise. Publishing on Fictionverse will not transfer ownership.</p>
-<h3 class="sub">Accounts</h3><p>Accounts are not live yet. When they are, you will be responsible for keeping your password safe and for what happens under your account.</p>
+<h3 class="sub">Accounts</h3><p>You can create an account with your email and a password. You are responsible for keeping your password safe and for what happens under your account. You can stop using your account at any time and ask us to delete it.</p>
 <h3 class="sub">No guarantees</h3><p>The site is provided as it is. Release dates, formats and plans, including any manga, manhwa or anime adaptations, depend on time, audience and funding and are not promises.</p>
 <h3 class="sub">Changes</h3><p>We may update these terms. The date at the top shows the latest version.</p>
 <h3 class="sub">Contact</h3><p>Contact details will be added here before launch.</p>
@@ -468,10 +492,10 @@ header{box-shadow:0 1px 0 rgba(147,103,255,.25),0 10px 30px rgba(0,0,0,.35)}
 <section class="page" id="privacy" aria-label="privacy">
 <div class="pw">
 <h2 class="t">Privacy Policy</h2><p class="note">Draft template, last updated 1 November 2026. It is not legal advice. Please have a qualified professional review it before you rely on it, especially before you take payments or accept creator submissions.</p>
-<h3 class="sub">What we collect</h3><p>If you join the update list, we collect your email address so we can tell you when chapters are released. We do not ask for anything else.</p>
+<h3 class="sub">What we collect</h3><p>If you join the update list or create an account, we collect your email address. For accounts we also hold the password you choose, in protected form. We do not ask for anything else.</p>
 <h3 class="sub">How we use it</h3><p>We use your email only to send updates about Fictionverse. We do not sell it. You can ask us to remove it at any time.</p>
 <h3 class="sub">Services the site uses</h3>
-<ul class="list"><li>GitHub Pages hosts the site and may log basic visit data such as your IP address.</li><li>Google Fonts and a public icon library load fonts and icons, which means your browser contacts those services.</li><li>An email form service (such as Formspree) receives your email when you submit the form.</li><li>If accounts are switched on later, Firebase will store your email and sign-in details.</li></ul>
+<ul class="list"><li>GitHub Pages hosts the site and may log basic visit data such as your IP address.</li><li>Google Fonts and a public icon library load fonts and icons, which means your browser contacts those services.</li><li>An email form service (such as Formspree) receives your email when you submit the form.</li><li>Firebase, a Google service, handles accounts. If you create one, it stores your email address and a protected form of your password and signs you in.</li></ul>
 <h3 class="sub">Cookies and storage</h3><p>The site may store small settings in your browser, such as being signed in on your device. It does not use advertising trackers.</p>
 <h3 class="sub">Your choices</h3><p>You can ask us to delete your email, or unsubscribe from any update message, at any time.</p>
 <h3 class="sub">Children</h3><p>The site is not aimed at children under 13, and we do not knowingly collect their information.</p>
@@ -504,6 +528,7 @@ header{box-shadow:0 1px 0 rgba(147,103,255,.25),0 10px 30px rgba(0,0,0,.35)}
     <input type="email" id="em" placeholder="Email" autocomplete="email" aria-label="Email" required>
     <input type="password" id="pw" placeholder="Password (6+ characters)" autocomplete="current-password" aria-label="Password" minlength="6" required>
     <button class="btn go" id="go" type="submit">Sign in</button>
+    <button type="button" class="flink" id="forgot" hidden>Forgot password?</button>
     <p id="am" role="alert"></p>
   </form>
   <p class="demo" id="demo"></p>
@@ -517,12 +542,12 @@ $('burger').onclick=function(){var o=document.querySelector('nav.main').classLis
 document.querySelectorAll('nav.main a').forEach(function(a){a.onclick=function(){document.querySelector('nav.main').classList.remove('open')}});
 
 /* Sign-in. Paste your Firebase config below to make accounts real. */
-var FIREBASE_CONFIG={apiKey:"YOUR_API_KEY",authDomain:"YOUR-PROJECT.firebaseapp.com",projectId:"YOUR-PROJECT",appId:"YOUR_APP_ID"};
+var FIREBASE_CONFIG={apiKey:"AIzaSyBxQFev4V7uEYnFtDuc04-4ODxYxv0JU_Y",authDomain:"fictionverse-f4f00.firebaseapp.com",projectId:"fictionverse-f4f00",appId:"1:545199108592:web:343f0af62b6c92b83e2d35"};
 var live=FIREBASE_CONFIG.apiKey.indexOf('YOUR')!==0,user=null,mode='in';
 if(!live)document.body.classList.add('noauth');
 var tt;function toast(m){var t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show')},3500)}
 function setUser(u){user=u;$('login').textContent=u?'Sign out':'Login';var b=$('userbtn');b.title=u?u.email:'Account';b.classList.toggle('on',!!u);b.innerHTML=u?'':'<i class="ti ti-user"></i>';if(u)b.textContent=u.email.charAt(0).toUpperCase();$('joinbtn').innerHTML=u?'You are signed in':'Create Account <i class="ti ti-arrow-right"></i>'}
-function setMode(m){mode=m;document.querySelectorAll('.tabs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.m===m)});var t=m==='in'?'Sign in':'Create account';$('dt').textContent=t;$('go').textContent=t;$('pw').autocomplete=m==='in'?'current-password':'new-password';$('am').textContent=''}
+function setMode(m){mode=m;document.querySelectorAll('.tabs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.m===m)});var t=m==='in'?'Sign in':'Create account';$('dt').textContent=t;$('go').textContent=t;$('pw').autocomplete=m==='in'?'current-password':'new-password';$('am').textContent='';$('forgot').hidden=!(live&&m==='in')}
 function openDlg(m){setMode(m);$('dlg').showModal()}
 function load(s,cb){var e=document.createElement('script');e.src=s;e.onload=cb;document.head.appendChild(e)}
 if(live){var base='https://www.gstatic.com/firebasejs/10.12.2/';
@@ -534,10 +559,17 @@ if(!live)$('pubbtn').innerHTML='Join the creator waitlist <i class="ti ti-arrow-
 $('pubbtn').onclick=function(){if(!live){location.hash='#notify';return}if(!user)openDlg('up')};
 $('joinbtn').onclick=function(){if(!user)openDlg('up')};
 $('dx').onclick=function(){$('dlg').close()};
+$('forgot').onclick=function(){
+  var em=$('em').value.trim();
+  if(typeof firebase==='undefined'){$('am').textContent='Sign-in is still loading. Please try again in a moment.';return}
+  if(!em){$('am').textContent='Enter your email above first.';return}
+  firebase.auth().sendPasswordResetEmail(em).then(function(){$('dlg').close();toast('Password reset email sent. Check your inbox.')}).catch(function(x){$('am').textContent=x.message.replace('Firebase: ','')});
+};
 document.querySelectorAll('.tabs button').forEach(function(b){b.onclick=function(){setMode(b.dataset.m)}});
 $('af').addEventListener('submit',function(e){
   e.preventDefault();var em=$('em').value.trim(),pw=$('pw').value;$('am').textContent='';
   if(!live){ls('fv-demo-user',em);setUser({email:em});$('dlg').close();$('af').reset();toast(mode==='up'?'Account created. Welcome to Fictionverse!':'Signed in. Welcome back!');return}
+  if(typeof firebase==='undefined'){$('am').textContent='Sign-in is still loading. Please try again in a moment.';return}
   var a=firebase.auth(),p=mode==='in'?a.signInWithEmailAndPassword(em,pw):a.createUserWithEmailAndPassword(em,pw);
   p.then(function(){$('dlg').close();$('af').reset();toast(mode==='up'?'Account created. Welcome to Fictionverse!':'Signed in. Welcome back!')}).catch(function(x){$('am').textContent=x.message.replace('Firebase: ','')});
 });
