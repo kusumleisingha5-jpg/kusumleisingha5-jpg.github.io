@@ -101,7 +101,8 @@ radial-gradient(1.5px 1.5px at 10% 20%,#fff,transparent),radial-gradient(1px 1px
 .join{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-top:1.6rem;padding:1.6rem 2rem;border:1px solid var(--line2);border-radius:10px;background:linear-gradient(90deg,#161036,#2a1670 60%,#0f2a5a)}
 .join h2{font:600 1.7rem var(--head)}
 .join p{color:#d6d6ea}
- footer{margin-top:2.5rem;border-top:1px solid var(--line2);padding:1.4rem 0}
+
+footer{margin-top:2.5rem;border-top:1px solid var(--line2);padding:1.4rem 0}
 .ft{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
 .ft small{display:block;color:var(--muted);font-size:.78rem;margin-top:.2rem}
 .fl{display:flex;gap:1.3rem;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}
@@ -182,8 +183,7 @@ dialog::backdrop{background:rgba(0,0,0,.72)}
 .page h2{font:600 1.3rem var(--head);margin:2.2rem 0 .8rem}
 .page h3{font:600 1.05rem var(--head);margin:1.4rem 0 .3rem}
 .page p,.page li{color:#d6d6ea}
-.page ul.list{margin-left:1.2rem;display:grid;gap:.3rem}
-.page .sp{display:grid;gap:1.6rem;margin-top:1.8rem}
+.page ul.list{margin-left:1.2rem;display:grid;gap:.3rem}.page .sp{display:grid;gap:1.6rem;margin-top:1.8rem}
 .page .cv{position:relative;aspect-ratio:3/4;width:min(240px,70%);border-radius:10px;border:1px solid var(--line2);display:flex;align-items:flex-end;padding:1rem;overflow:hidden;background:var(--ga);box-shadow:0 14px 40px rgba(0,0,0,.5)}
 .page .cv b{font:700 italic 1.4rem/1.1 var(--disp)}
 .page .cv img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -253,7 +253,8 @@ header{box-shadow:0 1px 0 rgba(147,103,255,.25),0 10px 30px rgba(0,0,0,.35)}
 .ftabs button[aria-pressed="true"],.catbar button[aria-pressed="true"]{background:var(--violet);border-color:var(--violet);color:#0b0620}
 .catbar{display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;margin-bottom:1rem;padding-bottom:.2rem}
 .catbar button{white-space:nowrap}
-.empty{color:var(--muted);margin:.5rem 0 1rem}.card[hidden]{display:none}
+.empty{color:var(--muted);margin:.5rem 0 1rem}
+.card[hidden]{display:none}
 .page .meta{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin:1rem 0}
 .page .meta div{border:1px solid var(--line);border-radius:10px;padding:.5rem .8rem;background:rgba(23,24,39,.6)}
 .page .meta dt{font-size:.7rem;color:var(--muted)}.page .meta dd{font-weight:500;font-size:.92rem}
@@ -303,6 +304,34 @@ radial-gradient(1.5px 1.5px at 10% 20%,#fff,transparent),radial-gradient(1px 1px
 .page h2.t,.page h3.sub,.page .char h4,.sh h2,.panel h3,.join h2,.pub h3,.fd h4{font-family:var(--body);letter-spacing:-.01em}
 .page h2.t{font-weight:800}
 .page h3.sub,.sh h2,.panel h3,.join h2,.pub h3,.fd h4,.page .char h4{font-weight:700}
+/* Legal pages */
+.legal-index{display:flex;flex-wrap:wrap;gap:.6rem;margin:0 0 1rem}
+.legal-index a{padding:.5rem 1rem;border:1px solid var(--line2);border-radius:99px;color:var(--text);text-decoration:none;font-size:.9rem;min-height:40px;display:inline-flex;align-items:center}
+.legal-index a:hover{border-color:var(--blue)}
+.page .updated{color:var(--muted);font-size:.9rem;margin-bottom:.8rem}
+.toc{border:1px solid var(--line);border-radius:12px;padding:1rem 1.2rem;background:rgba(23,24,39,.6);margin:1.2rem 0 1.5rem}
+.toc h3{font:700 1rem var(--body);margin:0 0 .5rem}
+.toc ol{margin-left:1.2rem;display:grid;gap:.2rem}
+.toc a{color:var(--blue);display:inline-block;padding:.15rem 0}
+.tw{overflow-x:auto;margin:.8rem 0 1.2rem}
+.ltable{width:100%;min-width:480px;border-collapse:collapse;font-size:.9rem}
+.ltable th,.ltable td{border:1px solid var(--line);padding:.55rem .7rem;text-align:left;vertical-align:top}
+.ltable th{background:rgba(147,103,255,.12);font-weight:600}
+.page p+ul.list,.page p+p{margin-top:.7rem}
+.page .totop{margin:2rem 0 .5rem}
+.wlnote{flex-basis:100%;font-size:.82rem;color:var(--muted);margin:0}
+.wlnote a,.page .totop a,.demo a{color:var(--blue)}
+#footcontact{margin-bottom:.4rem}
+.fnote{flex-basis:100%;font-size:.82rem;color:var(--muted)}
+.fnote a{color:var(--blue)}
+@media(max-width:600px){
+.ltable{min-width:0}
+.ltable tr:first-child{display:none}
+.ltable,.ltable tbody,.ltable tr,.ltable td{display:block;width:100%}
+.ltable tr{border:1px solid var(--line);border-radius:10px;margin-bottom:.6rem;padding:.3rem 0}
+.ltable td{border:0;padding:.3rem .8rem}
+.ltable td::before{content:attr(data-label);display:block;font-size:.72rem;color:var(--muted)}
+}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1!important;transform:none!important}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Fictionverse","url":"https://kusumleisingha5-jpg.github.io/","description":"Original manga and manhwa universes: Eternal Origin and The Devourer's Return."}</script>
@@ -326,8 +355,7 @@ radial-gradient(1.5px 1.5px at 10% 20%,#fff,transparent),radial-gradient(1px 1px
     <button class="ib" id="userbtn" aria-label="Account"><i class="ti ti-user"></i></button>
     <button class="login" id="login">Login</button>
   </div>
-</header>
-<div class="sbar" id="sbar" role="search" hidden>
+</header><div class="sbar" id="sbar" role="search" hidden>
   <div class="sin"><i class="ti ti-search"></i><input id="q" type="search" placeholder="Search stories, characters, genres..." aria-label="Search" autocomplete="off"><button class="x2" id="sx" aria-label="Close search">&times;</button></div>
   <div class="sres" id="sres" role="list"></div>
 </div>
@@ -456,8 +484,7 @@ radial-gradient(1.5px 1.5px at 10% 20%,#fff,transparent),radial-gradient(1px 1px
       <li><i class="ti ti-book-2"></i>Manga and comics</li>
       <li><i class="ti ti-device-mobile"></i>Manhwa and webtoons</li>
     </ul>
-  </section>
-  <div class="sh" id="foundation"><h2><i class="ti ti-sparkles"></i>Fictionverse Foundation</h2></div>
+  </section><div class="sh" id="foundation"><h2><i class="ti ti-sparkles"></i>Fictionverse Foundation</h2></div>
   <section class="fd">
     <div class="now"><small>Now</small><h4>Foundation</h4><p>Brand, homepage and canon for both original universes.</p></div>
     <div><small>Next</small><h4>First launch</h4><p>Series pages, reader accounts and the first Eternal Origin manga and Devourer's Return manhwa chapters.</p></div>
@@ -472,36 +499,122 @@ radial-gradient(1.5px 1.5px at 10% 20%,#fff,transparent),radial-gradient(1px 1px
       <button class="btn" type="submit">Notify me</button>
     </form>
     <p class="wlmsg" role="status"></p>
+    <p class="wlnote">By subscribing you agree to get emails about Fictionverse chapters. See our <a href="#privacy">Privacy Policy</a>.</p>
     <button class="btn" id="joinbtn">Create Account <i class="ti ti-arrow-right"></i></button>
   </section>
 </div>
-<div class="wrap">
-<section class="page" id="terms" aria-label="terms">
+<div class="wrap" id="legal">
+<div class="sh"><h2><i class="ti ti-sparkles"></i>Legal</h2></div>
+<nav class="legal-index" aria-label="Legal pages"><a href="#terms">Terms of Service</a><a href="#privacy">Privacy Policy</a><a href="#copyright">Copyright Policy</a><a href="#copyright">Copyright Policy</a></nav>
+<section class="page legal" id="terms">
 <div class="pw">
-<h2 class="t">Terms of Service</h2><p class="note">Draft template, last updated 1 November 2026. It is not legal advice. Please have a qualified professional review it before you rely on it, especially before you take payments or accept creator submissions.</p>
-<h3 class="sub">Using this site</h3><p>Fictionverse is a fiction and entertainment website. You may read and share the site freely for personal, non-commercial use. Please do not misuse the site, try to break it, or collect data from it in bulk.</p>
-<h3 class="sub">Our content</h3><p>Eternal Origin, The Devourer's Return, their characters, worlds, text and artwork are original works. All rights are reserved by their creator. You may not copy, republish, translate, adapt or sell them without written permission.</p>
-<h3 class="sub">Other people's titles</h3><p>When the site mentions anime, manga, novels or other titles made by others, those belong to their owners. Fictionverse links to official places to read or watch them and does not host them without permission.</p>
-<h3 class="sub">Creators and submissions</h3><p>Creator publishing is not open yet. When it opens, creators will keep the rights to their own work unless a separate written agreement says otherwise. Publishing on Fictionverse will not transfer ownership.</p>
-<h3 class="sub">Accounts</h3><p>You can create an account with your email and a password. You are responsible for keeping your password safe and for what happens under your account. You can stop using your account at any time and ask us to delete it.</p>
-<h3 class="sub">No guarantees</h3><p>The site is provided as it is. Release dates, formats and plans, including any manga, manhwa or anime adaptations, depend on time, audience and funding and are not promises.</p>
-<h3 class="sub">Changes</h3><p>We may update these terms. The date at the top shows the latest version.</p>
-<h3 class="sub">Contact</h3><p>Contact details will be added here before launch.</p>
+<h2 class="t">Terms of Service</h2>
+<p class="updated">Last updated: <time datetime="2026-11-03">3 November 2026</time>. These terms apply from that date.</p>
+<p>These terms explain how you may use Fictionverse.</p>
+<nav class="toc" aria-label="Terms of Service contents"><h3>Contents</h3><ol><li><a href="#terms-1">About these terms</a></li><li><a href="#terms-2">What the site offers today</a></li><li><a href="#terms-3">Accounts</a></li><li><a href="#terms-4">Acceptable use</a></li><li><a href="#terms-5">Our content and what you may do with it</a></li><li><a href="#terms-6">What you send us</a></li><li><a href="#terms-7">Third-party services and links</a></li><li><a href="#terms-8">Availability and changes</a></li><li><a href="#terms-9">Disclaimers and liability</a></li><li><a href="#terms-10">Suspension and ending</a></li><li><a href="#terms-11">Changes to these terms</a></li><li><a href="#terms-12">Contact</a></li></ol></nav>
+<h3 class="sub" id="terms-1">1. About these terms</h3>
+<p>By using Fictionverse you agree to these terms, our Privacy Policy and our Copyright Policy. If you do not agree, please do not use the site.</p>
+<h3 class="sub" id="terms-2">2. What the site offers today</h3>
+<p>Today you can read about our two original series, use the search box, and create an account. An email update list is built but not switched on.</p>
+<p>Creator publishing, bookmarks, community features, a catalogue of other titles and paid features are planned and not available. Separate terms will apply to any of them before they launch.</p>
+<h3 class="sub" id="terms-3">3. Accounts</h3>
+<p>You must be 18 or older to create an account. Give a real email address, keep your password safe, and tell us at once if you think someone else has used your account. You are responsible for what happens under it. You can stop using your account at any time and ask us to delete it.</p>
+<h3 class="sub" id="terms-4">4. Acceptable use</h3>
+<p>Please do not:</p>
+<ul class="list"><li>break, overload or probe the security of the site</li><li>scrape it in bulk or use bots to sign up</li><li>pretend to be someone else</li><li>use the site to break the law or harm others</li><li>try to access other people's accounts</li></ul>
+<h3 class="sub" id="terms-5">5. Our content and what you may do with it</h3>
+<p>The stories, characters, artwork, logo and design are owned as set out in our Copyright Policy. You may read the site, share links to it, and use it for personal, non-commercial purposes. Anything else needs our written permission.</p>
+<h3 class="sub" id="terms-6">6. What you send us</h3>
+<p>The site has no way to post content yet. If you email us feedback or ideas, you let us use them to improve the site without owing you anything. Terms for creators will be published before creator publishing opens.</p>
+<h3 class="sub" id="terms-7">7. Third-party services and links</h3>
+<p>The site depends on services we do not control, listed in our Privacy Policy. If they are slow or unavailable, parts of the site may not work.</p>
+<h3 class="sub" id="terms-8">8. Availability and changes</h3>
+<p>We may change, pause or remove any part of the site. Release dates, formats and plans, including any manga, manhwa or anime adaptations, depend on time, audience and funding and are not promises.</p>
+<h3 class="sub" id="terms-9">9. Disclaimers and liability</h3>
+<p>The site is provided as it is, without promises that it will be error-free or always available. To the extent the law allows, we are not liable for indirect or consequential loss from using the site. Nothing in these terms limits any right or liability that the law does not allow to be limited.</p>
+<h3 class="sub" id="terms-10">10. Suspension and ending</h3>
+<p>You may stop using the site at any time. We may suspend or close an account that breaks these terms or if the law requires.</p>
+<h3 class="sub" id="terms-11">11. Changes to these terms</h3>
+<p>We will change the date at the top when we update these terms. If you keep using the site after a change, you accept the new terms. For important changes we will say so on the site.</p>
+<h3 class="sub" id="terms-12">12. Contact</h3>
+<p>Questions about these terms: <span class="lc-email">the contact email shown in the footer of this site</span>.</p>
+<p class="totop"><a href="#legal">&uarr; Back to legal pages</a></p>
 </div>
 </section>
-<section class="page" id="privacy" aria-label="privacy">
+
+<section class="page legal" id="privacy">
 <div class="pw">
-<h2 class="t">Privacy Policy</h2><p class="note">Draft template, last updated 1 November 2026. It is not legal advice. Please have a qualified professional review it before you rely on it, especially before you take payments or accept creator submissions.</p>
-<h3 class="sub">What we collect</h3><p>If you join the update list or create an account, we collect your email address. For accounts we also hold the password you choose, in protected form. We do not ask for anything else.</p>
-<h3 class="sub">How we use it</h3><p>We use your email only to send updates about Fictionverse. We do not sell it. You can ask us to remove it at any time.</p>
-<h3 class="sub">Services the site uses</h3>
-<ul class="list"><li>GitHub Pages hosts the site and may log basic visit data such as your IP address.</li><li>Google Fonts and a public icon library load fonts and icons, which means your browser contacts those services.</li><li>An email form service (such as Formspree) receives your email when you submit the form.</li><li>Firebase, a Google service, handles accounts. If you create one, it stores your email address and a protected form of your password and signs you in.</li></ul>
-<h3 class="sub">Cookies and storage</h3><p>The site may store small settings in your browser, such as being signed in on your device. It does not use advertising trackers.</p>
-<h3 class="sub">Your choices</h3><p>You can ask us to delete your email, or unsubscribe from any update message, at any time.</p>
-<h3 class="sub">Children</h3><p>The site is not aimed at children under 13, and we do not knowingly collect their information.</p>
-<h3 class="sub">Contact</h3><p>Contact details will be added here before launch.</p>
+<h2 class="t">Privacy Policy</h2>
+<p class="updated">Last updated: <time datetime="2026-11-03">3 November 2026</time>.</p>
+<p>This policy explains what information Fictionverse collects, why, and what you can do about it. It describes what the site does today and marks planned features separately.</p>
+<nav class="toc" aria-label="Privacy Policy contents"><h3>Contents</h3><ol><li><a href="#privacy-1">Who we are</a></li><li><a href="#privacy-2">What is live today, and what is not</a></li><li><a href="#privacy-3">Information we collect</a></li><li><a href="#privacy-4">How we use it</a></li><li><a href="#privacy-5">Cookies and browser storage</a></li><li><a href="#privacy-6">Services that handle data</a></li><li><a href="#privacy-7">Sharing</a></li><li><a href="#privacy-8">Transfers outside your country</a></li><li><a href="#privacy-9">How long we keep it</a></li><li><a href="#privacy-10">Security</a></li><li><a href="#privacy-11">Your rights and how to use them</a></li><li><a href="#privacy-12">Children</a></li><li><a href="#privacy-13">Changes to this policy</a></li><li><a href="#privacy-14">Contact and complaints</a></li></ol></nav>
+<h3 class="sub" id="privacy-1">1. Who we are</h3>
+<p>Fictionverse is <span class="lc-name">an independent project run by its founder</span>. This policy covers the website at kusumleisingha5-jpg.github.io and nothing else. "We" means the people who run it.</p>
+<h3 class="sub" id="privacy-2">2. What is live today, and what is not</h3>
+<div class="tw"><table class="ltable"><tr><th>Feature</th><th>Status</th><th>Data involved</th></tr><tr><td data-label="Feature">Browsing the site</td><td data-label="Status">Live</td><td data-label="Data involved">Technical data your browser sends to our host and the services in section 6, such as your IP address.</td></tr><tr><td data-label="Feature">Search box</td><td data-label="Status">Live</td><td data-label="Data involved">Runs in your browser on a list built into the page. Your searches are not sent to us.</td></tr><tr><td data-label="Feature">Accounts: sign up, sign in, password reset</td><td data-label="Status">Live</td><td data-label="Data involved">Email address and password, handled by Firebase Authentication.</td></tr><tr><td data-label="Feature">Email update list</td><td data-label="Status">Built, not switched on</td><td data-label="Data involved">If switched on, the email you type is sent to our form provider. Until then nothing is sent.</td></tr><tr><td data-label="Feature">Creator publishing, bookmarks, comments, payments</td><td data-label="Status">Planned, not available</td><td data-label="Data involved">Nothing is collected. We will update this policy before any of them launches.</td></tr></table></div>
+<h3 class="sub" id="privacy-3">3. Information we collect</h3>
+<ul class="list"><li>Account: the email address and password you choose. Firebase also records a user ID, when the account was created and last used, and technical data such as browser type and IP address, used for security.</li><li>Update list (only if switched on): your email address.</li><li>Technical data: our host and other services in section 6 may log your IP address, browser type, the pages requested and the time.</li><li>Messages: if you email us we keep your message and address so we can reply.</li></ul>
+<p>We do not ask for your name, phone number, location or payment details. We do not use analytics, advertising trackers or social-media pixels.</p>
+<h3 class="sub" id="privacy-4">4. How we use it</h3>
+<p>We use your information to run accounts, send password-reset emails, send updates you asked for, answer your messages, protect the site from abuse and meet legal duties. We rely on your consent when you give us your email or create an account and, where the law allows, on our legitimate interest in keeping the site secure.</p>
+<h3 class="sub" id="privacy-5">5. Cookies and browser storage</h3>
+<p>The site does not set cookies. To keep you signed in, the Firebase sign-in code stores your sign-in state in your browser's storage; signing out clears it. Other services may use their own storage, as described in their policies. Because we use no tracking or advertising cookies, we show no cookie banner.</p>
+<h3 class="sub" id="privacy-6">6. Services that handle data</h3>
+<div class="tw"><table class="ltable"><tr><th>Service</th><th>Used for</th><th>Data it can receive</th></tr><tr><td data-label="Service">GitHub Pages (GitHub)</td><td data-label="Used for">Hosting the site</td><td data-label="Data it can receive">IP address, browser details, pages requested</td></tr><tr><td data-label="Service">Google Fonts (Google)</td><td data-label="Used for">Loading fonts</td><td data-label="Data it can receive">IP address, browser details</td></tr><tr><td data-label="Service">jsDelivr</td><td data-label="Used for">Delivering the icon library</td><td data-label="Data it can receive">IP address, browser details</td></tr><tr><td data-label="Service">Firebase Authentication (Google)</td><td data-label="Used for">Accounts</td><td data-label="Data it can receive">Email, password, browser details, IP address</td></tr><tr><td data-label="Service">Formspree (not yet active)</td><td data-label="Used for">Email update list</td><td data-label="Data it can receive">The email you submit</td></tr></table></div>
+<p>Google says Firebase Authentication keeps logged IP addresses for a few weeks, and keeps other sign-in data until the account is deleted, after which it is removed from live and backup systems within 180 days. Each service has its own privacy policy, which we encourage you to read.</p>
+<h3 class="sub" id="privacy-7">7. Sharing</h3>
+<p>We do not sell personal data or share it for advertising. We share it only with the services in section 6 so the site works, when the law requires it, or to protect our rights and the safety of others.</p>
+<h3 class="sub" id="privacy-8">8. Transfers outside your country</h3>
+<p>The services in section 6 are run by companies that process data in several countries, including outside India. By using the site you understand your data may be processed there.</p>
+<h3 class="sub" id="privacy-9">9. How long we keep it</h3>
+<p>Account data is kept until you ask us to delete the account. Email-list addresses are kept until you unsubscribe or ask us to remove them. Messages you send us are kept as long as needed to deal with your request.</p>
+<h3 class="sub" id="privacy-10">10. Security</h3>
+<p>The site is delivered over HTTPS. Our code sends your password straight to Firebase when you sign in or sign up and does not store or log it; Firebase manages how credentials are stored. No system is perfectly secure, so please use a strong password you do not use elsewhere.</p>
+<h3 class="sub" id="privacy-11">11. Your rights and how to use them</h3>
+<p>Depending on where you live, you may have the right to access your data, correct it, delete it, withdraw consent, and complain to a data protection authority. Laws such as India's Digital Personal Data Protection Act, 2023 or the GDPR may apply.</p>
+<p>To use these rights, email <span class="lc-email">the contact email shown in the footer of this site</span> from the address on your account. We may ask you to confirm it is you. We aim to reply within 30 days. You can reset your password from the sign-in box. There is no delete-account button yet, so please email us to have an account deleted.</p>
+<h3 class="sub" id="privacy-12">12. Children</h3>
+<p>Accounts and the update list are for people aged 18 and over. We do not knowingly collect information from anyone younger. If you think we have, email <span class="lc-email">the contact email shown in the footer of this site</span> and we will delete it.</p>
+<h3 class="sub" id="privacy-13">13. Changes to this policy</h3>
+<p>We will change the date at the top when we update this policy and, for important changes, say so on the site. We will update it before any planned feature in section 2 goes live.</p>
+<h3 class="sub" id="privacy-14">14. Contact and complaints</h3>
+<p>Questions, requests and complaints about your data: <span class="lc-email">the contact email shown in the footer of this site</span>. We treat the same address as our grievance contact.</p>
+<p class="totop"><a href="#legal">&uarr; Back to legal pages</a></p>
 </div>
 </section>
+
+<section class="page legal" id="copyright">
+<div class="pw">
+<h2 class="t">Copyright Policy</h2>
+<p class="updated">Last updated: <time datetime="2026-11-03">3 November 2026</time>.</p>
+<p>This policy explains who owns the content on Fictionverse, what you may do with it, and how to report a problem.</p>
+<nav class="toc" aria-label="Copyright Policy contents"><h3>Contents</h3><ol><li><a href="#copyright-1">Who owns what</a></li><li><a href="#copyright-2">What you may do</a></li><li><a href="#copyright-3">Other people's works</a></li><li><a href="#copyright-4">Creator submissions (planned)</a></li><li><a href="#copyright-5">Reporting copyright infringement</a></li><li><a href="#copyright-6">What we do with a notice</a></li><li><a href="#copyright-7">Counter-notice</a></li><li><a href="#copyright-8">Repeat infringers</a></li><li><a href="#copyright-9">Name and logo</a></li><li><a href="#copyright-10">Contact</a></li></ol></nav>
+<h3 class="sub" id="copyright-1">1. Who owns what</h3>
+<p>Eternal Origin, The Devourer's Return, their stories, characters, names and worlds, the Fictionverse logo, and the website's design and code are owned by Fictionverse's creator. All rights are reserved.</p>
+<p>Some materials, such as fonts, icons and stock imagery from the design tool used for covers, are used under licences from their owners and remain theirs.</p>
+<h3 class="sub" id="copyright-2">2. What you may do</h3>
+<p>You may read and share links to the site. You may quote short excerpts for review, commentary, criticism or news, with credit and a link back, where the law allows that. Please do not copy, republish, translate, adapt, sell or build products from our stories, characters or artwork without our written permission.</p>
+<h3 class="sub" id="copyright-3">3. Other people's works</h3><p>The site may mention anime, manga, novels and other titles made by others. They belong to their owners. Fictionverse does not host other people's chapters or episodes. The planned Explore section will list titles and link only to official places to read or watch them.</p>
+<h3 class="sub" id="copyright-4">4. Creator submissions (planned)</h3>
+<p>Creator publishing is not open yet. When it opens, creators will keep copyright in their own work, will need to own it or have permission to use it, and will give us only the limited licence needed to show it. Terms will be published first.</p>
+<h3 class="sub" id="copyright-5">5. Reporting copyright infringement</h3>
+<p>If you believe something on Fictionverse infringes your copyright, email <span class="lc-email">the contact email shown in the footer of this site</span> with:</p>
+<ul class="list"><li>your name, postal address, email and phone number</li><li>a description of the work you say is infringed</li><li>where the material appears on our site</li><li>a statement that you believe in good faith that the use is not authorised by the owner, its agent or the law</li><li>a statement that your notice is accurate and that you are the owner or authorised to act for the owner</li><li>your signature, which may be typed</li></ul>
+<p>Knowingly sending a false notice can have legal consequences.</p>
+<h3 class="sub" id="copyright-6">6. What we do with a notice</h3>
+<p>We review notices promptly. If a notice is complete we may remove or disable access to the material, tell the person responsible, and share the notice with them. The site is hosted by GitHub, which has its own process and may act on its own.</p>
+<h3 class="sub" id="copyright-7">7. Counter-notice</h3>
+<p>If we removed your material and you believe that was a mistake or a misidentification, email <span class="lc-email">the contact email shown in the footer of this site</span> with your name and contact details, a description of the material and where it appeared, and a statement made in good faith that it was removed by mistake or misidentification. We may restore the material if the person who complained does not tell us within 14 days that they have started legal action.</p>
+<h3 class="sub" id="copyright-8">8. Repeat infringers</h3>
+<p>We may suspend or close the accounts of people who repeatedly infringe copyright.</p>
+<h3 class="sub" id="copyright-9">9. Name and logo</h3>
+<p>Please do not use the Fictionverse name or logo in a way that suggests we endorse you or your product.</p>
+<h3 class="sub" id="copyright-10">10. Contact</h3>
+<p>Copyright questions and notices: <span class="lc-email">the contact email shown in the footer of this site</span>.</p>
+<p class="totop"><a href="#legal">&uarr; Back to legal pages</a></p>
+</div>
+</section>
+
 </div>
 </main>
 
@@ -509,6 +622,7 @@ radial-gradient(1.5px 1.5px at 10% 20%,#fff,transparent),radial-gradient(1px 1px
   <div class="wrap ft">
     <div><a class="logo" href="#top" aria-label="Fictionverse home"><svg class="lmark" aria-hidden="true" focusable="false"><use href="#lg"/></svg><span>FICTION<b>VERSE</b></span></a><small>Where Every Story Becomes A Universe</small></div>
     <div class="fl"><a href="#foundation">About</a><a href="#notify">Updates</a><a href="#terms">Terms of Service</a><a href="#privacy">Privacy Policy</a><a href="#publish">For creators</a></div>
+    <div class="fnote"><p id="footcontact" hidden></p><p>&copy; 2026 Fictionverse. All rights reserved. See the <a href="#copyright">Copyright Policy</a>.</p></div>
   </div>
 </footer>
 
@@ -531,6 +645,7 @@ radial-gradient(1.5px 1.5px at 10% 20%,#fff,transparent),radial-gradient(1px 1px
     <button type="button" class="flink" id="forgot" hidden>Forgot password?</button>
     <p id="am" role="alert"></p>
   </form>
+  <p class="demo" id="consent" hidden>By creating an account you agree to the <a class="lk" href="#terms">Terms of Service</a> and <a class="lk" href="#privacy">Privacy Policy</a>.</p>
   <p class="demo" id="demo"></p>
 </dialog>
 
@@ -547,7 +662,7 @@ var live=FIREBASE_CONFIG.apiKey.indexOf('YOUR')!==0,user=null,mode='in';
 if(!live)document.body.classList.add('noauth');
 var tt;function toast(m){var t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('show')},3500)}
 function setUser(u){user=u;$('login').textContent=u?'Sign out':'Login';var b=$('userbtn');b.title=u?u.email:'Account';b.classList.toggle('on',!!u);b.innerHTML=u?'':'<i class="ti ti-user"></i>';if(u)b.textContent=u.email.charAt(0).toUpperCase();$('joinbtn').innerHTML=u?'You are signed in':'Create Account <i class="ti ti-arrow-right"></i>'}
-function setMode(m){mode=m;document.querySelectorAll('.tabs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.m===m)});var t=m==='in'?'Sign in':'Create account';$('dt').textContent=t;$('go').textContent=t;$('pw').autocomplete=m==='in'?'current-password':'new-password';$('am').textContent='';$('forgot').hidden=!(live&&m==='in')}
+function setMode(m){mode=m;document.querySelectorAll('.tabs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.m===m)});var t=m==='in'?'Sign in':'Create account';$('dt').textContent=t;$('go').textContent=t;$('pw').autocomplete=m==='in'?'current-password':'new-password';$('am').textContent='';$('forgot').hidden=!(live&&m==='in');$('consent').hidden=m!=='up'}
 function openDlg(m){setMode(m);$('dlg').showModal()}
 function load(s,cb){var e=document.createElement('script');e.src=s;e.onload=cb;document.head.appendChild(e)}
 if(live){var base='https://www.gstatic.com/firebasejs/10.12.2/';
@@ -582,8 +697,7 @@ document.querySelectorAll('form[data-form]').forEach(function(f){
 });
 
 /* Search, categories, featured */
-var STORIES=[
-{id:'eternal-origin',title:'Eternal Origin',type:'Original Manga',plan:'Manga to Anime',genres:['Fantasy','Action','Bloodlines'],cats:['fantasy','action','manga'],desc:'A vast fantasy universe built on origin powers, unique classes, bloodlines and high-level conflict.',chars:[['Alden Elarion','Protagonist'],['Lyon Velcreath','Rival and antagonist'],['Elysia Elarion','Alden\'s elder sister']],fg:'radial-gradient(circle at 80% 20%,rgba(54,185,255,.45),transparent 55%),linear-gradient(150deg,#10294a,#0b0d1c 75%)'},
+var STORIES=[{id:'eternal-origin',title:'Eternal Origin',type:'Original Manga',plan:'Manga to Anime',genres:['Fantasy','Action','Bloodlines'],cats:['fantasy','action','manga'],desc:'A vast fantasy universe built on origin powers, unique classes, bloodlines and high-level conflict.',chars:[['Alden Elarion','Protagonist'],['Lyon Velcreath','Rival and antagonist'],['Elysia Elarion','Alden\'s elder sister']],fg:'radial-gradient(circle at 80% 20%,rgba(54,185,255,.45),transparent 55%),linear-gradient(150deg,#10294a,#0b0d1c 75%)'},
 {id:'devourer-return',title:'The Devourer\'s Return',type:'Original Manhwa',plan:'Manhwa to Anime',genres:['Dark Fantasy','Progression','Atheria','Undying Hunger'],cats:['fantasy','dark-fantasy','progression','manhwa'],desc:'The Undying Hunger awakens inside Baek Dohyun in the world of Atheria. He keeps his own identity and philosophy.',chars:[['Baek Dohyun','Protagonist'],['Yoon Si-Hwan','The Eternal Regent'],['Kurose Renji','The Sword Saint'],['Elias Vinter','The Meridian']],fg:'radial-gradient(circle at 20% 20%,rgba(200,40,70,.5),transparent 55%),linear-gradient(150deg,#3a0f1f,#0b0d1c 75%)'}];
 function lc(t){return String(t||'').toLowerCase()}
 function runSearch(q){
@@ -630,6 +744,15 @@ function showFeat(i){
 }
 document.querySelectorAll('.ftabs button').forEach(function(b){b.onclick=function(){showFeat(+b.dataset.i)}});
 showFeat(0);
+var LEGAL={name:"",email:""}; /* Fill in your name and contact email to complete the legal pages */
+(function(){
+  document.querySelectorAll('.lc-name').forEach(function(e){if(LEGAL.name)e.textContent='operated by '+LEGAL.name});
+  if(LEGAL.email){
+    document.querySelectorAll('.lc-email').forEach(function(e){var a=document.createElement('a');a.href='mailto:'+LEGAL.email;a.textContent=LEGAL.email;e.replaceWith(a)});
+    var f=$('footcontact');f.hidden=false;f.textContent='Contact: ';var l=document.createElement('a');l.href='mailto:'+LEGAL.email;l.textContent=LEGAL.email;f.appendChild(l);
+  }
+  document.querySelectorAll('.lk').forEach(function(a){a.addEventListener('click',function(){$('dlg').close()})});
+})();
 (function(){
 if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -6% 0px',threshold:.05});
